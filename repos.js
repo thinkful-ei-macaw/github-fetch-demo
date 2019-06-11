@@ -1,17 +1,16 @@
 'use strict';
-
+/**
+ * Fetch user repos
+ */
 const getRepos = function() {
-  try {
-    fetch('https://api.github.com/users/andreacardybailey/repos')
-      .then(response => response.json())
-      .then(jsonData => {
-        console.log(jsonData);
-        extractData(jsonData);
-      });
-  }
-  catch(error){
-    console.log(`There was an error fetching your data: ${error.message}.`);
-  }
+  fetch('https://api.github.com/users/andreacardybailey/repos')
+    .then(response => response.json())
+    .then(jsonData => {
+      extractData(jsonData);
+    })
+    .catch(error => {
+      console.log(`There was an error fetching your data: ${error.message}.`);
+    });
 };
 
 const extractData = function(jsonData) {
