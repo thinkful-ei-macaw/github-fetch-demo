@@ -31,10 +31,10 @@ const extractData = function(data){
 
 /**
  * Create HTML template for each result
- * @param repo_name
- * @param url
- * @param created_at
- * @param decription
+ * @param {string} repo_name
+ * @param {string} url
+ * @param {Date} created_at
+ * @param {string} description
  */
 const createTemplate = function(repo_name, url, date, description) {
   let template = `
